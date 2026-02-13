@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cattleya Food - Restaurante premium em Aquiraz-CE. Excelência gastronômica em cada experiência.">
+    <meta name="keywords" content="restaurante, gourmet, premium, Aquiraz, CE, gastronomia">
+    <meta name="author" content="Jr. Abrantes">
+    <meta property="og:title" content="Cattleya Food - Excelência Gastronômica">
+    <meta property="og:description" content="Restaurante premium em Aquiraz-CE">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200">
+    <title>Cattleya Food - Restaurante</title>
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://api.whatsapp.com/send/?phone=5588981195074&text&type=phone_number&app_absent=0"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ── OVERLAY ────────────────────────────── -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+    <!-- ── DRAWER MOBILE ─────────────────────── -->
+    <aside class="drawer" id="drawerNav" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+        <div class="drawer-brand">
+            <span class="drawer-brand-logo">Cattleya Food</span>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="drawer-nav-list">
+            <p class="drawer-section-label">Navegação</p>
+            <a href="#home"       class="drawer-nav-link"><i class="fas fa-home"></i>       Início</a>
+            <a href="#about"      class="drawer-nav-link"><i class="fas fa-leaf"></i>       Sobre</a>
+            <a href="#menu"       class="drawer-nav-link"><i class="fas fa-utensils"></i>   Destaques</a>
+            <a href="cardapio.html" class="drawer-nav-link"><i class="fas fa-book-open"></i>  Cardápio</a>
+            <a href="#contact"    class="drawer-nav-link"><i class="fas fa-envelope"></i>   Contato</a>
+        </nav>
+
+        <div class="drawer-social-row">
+            <a href="https://www.instagram.com/cattleya.cro" target="_blank" rel="noopener noreferrer"
+               class="drawer-social-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5588981195074&text&type=phone_number&app_absent=0"
+               target="_blank" rel="noopener noreferrer"
+               class="drawer-social-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="drawer-footer-note">© 2025 Cattleya Food</div>
+    </aside>
+
+    <!-- ── HEADER ────────────────────────────── -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="Cattleya Food Home">
+                    <span class="logo-text">Cattleya Food</span>
+                </a>
+                <button class="cart-icon" id="cartIcon" aria-label="Abrir carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home"         class="nav-link">Início</a></li>
+                        <li><a href="#about"        class="nav-link">Sobre</a></li>
+                        <li><a href="#menu"         class="nav-link">Destaques</a></li>
+                        <li><a href="cardapio.html" class="nav-link">Cardápio</a></li>
+                        <li><a href="#contact"      class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawerNav">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── HERO ──────────────────────────────── -->
+    <section class="hero" id="home">
+        <div class="hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cattleya Food</h1>
+                <p class="hero-subtitle">Excelência gastronômica em cada experiência</p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary">Ver Destaques</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5588981195074&text=Olá! Gostaria de fazer um pedido&type=phone_number&app_absent=0"
+                        class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Pedir pelo WhatsApp</a>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────── -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://i.pinimg.com/1200x/54/f6/58/54f658e354f03ec8cb8808fbea2e92c6.jpg"
+                        alt="Interior do Restaurante Cattleya Food" loading="lazy">
+                    <div class="about-image-overlay">
+                        <span class="overlay-text">Tradição & Inovação</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p class="about-text">
+                        O Cattleya Food nasceu da paixão pela alta gastronomia e do desejo de proporcionar
+                        experiências culinárias inesquecíveis. Combinamos técnicas clássicas da culinária
+                        internacional com ingredientes cuidadosamente selecionados para criar pratos que
+                        são verdadeiras obras de arte.
+                    </p>
+                    <p class="about-text">
+                        Nossa equipe de chefs experientes trabalha incansavelmente para garantir que cada
+                        prato seja preparado com perfeição, respeitando a tradição gastronômica enquanto
+                        incorpora toques modernos e inovadores.
+                    </p>
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-star"></i></div>
+                            <div class="badge-content">
+                                <strong>Avaliação 4.9/5</strong>
+                                <span>+100 avaliações</span>
+                            </div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="badge-content">
+                                <strong>Pagamento Seguro</strong>
+                                <span>Certificados</span>
+                            </div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-clock"></i></div>
+                            <div class="badge-content">
+                                <strong>Entrega Rápida</strong>
+                                <span>30-45 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MENU (DESTAQUES) ───────────────────── -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Destaques da Casa</h2>
+            <p class="section-subtitle">Pratos elaborados com ingredientes premium</p>
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="entradas">Entradas</button>
+                <button class="filter-btn" data-filter="principais">Principais</button>
+                <button class="filter-btn" data-filter="sobremesas">Sobremesas</button>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ───────────────────────────── -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <p class="section-subtitle">Entre em contato conosco</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-content">
+                            <h3>Endereço</h3>
+                            <p>Aquiraz-CE</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-content">
+                            <h3>Telefone</h3>
+                            <p>(88) 98119-5074</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-content">
+                            <h3>Horário</h3>
+                            <p>Seg - Sex: 9h às 23h</p>
+                            <p>Sáb - Dom: 11h às 23h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-content">
+                            <h3>Email</h3>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d6e6263796c79626e6c79796168746c236e7f624d6a606c6461236e6260">[email&#160;protected]</a></p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cattleya.cro" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=5588981195074&text&type=phone_number&app_absent=0"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Localização em Aquiraz-CE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">Cattleya Food</span>
+                    </div>
+                    <p class="footer-description">
+                        Excelência gastronômica em cada experiência.
+                        Sabores autênticos e serviço premium.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#menu">Destaques</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Informações</h3>
+                    <ul class="footer-links">
+                        <li><a href="politicas.html#privacidade">Política de Privacidade</a></li>
+                        <li><a href="politicas.html#cookies">Política de Cookies</a></li>
+                        <li><a href="politicas.html#termos">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Formas de Pagamento</h3>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-pix"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cattleya Food. Todos os direitos reservados.</p>
+                <p class="developer-credit">Desenvolvido por <strong>Jr. Abrantes</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── Cart Sidebar ──────────────────────── -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
+            <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Seu carrinho está vazio</p>
+                <button class="btn btn-primary" id="closeCartBtn">Ver Cardápio</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-summary">
+                <div class="summary-row"><span>Subtotal:</span><span id="cartSubtotal">R$ 0,00</span></div>
+                <div class="summary-row"><span>Taxa de entrega:</span><span id="cartDeliveryFee">R$ 8,00</span></div>
+                <div class="summary-row total"><span>Total:</span><span id="cartTotal">R$ 0,00</span></div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" id="clearCartBtn"><i class="fas fa-trash"></i> Limpar</button>
+                <button class="btn btn-primary" id="checkoutBtn"><i class="fas fa-check"></i> Finalizar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Checkout Modal ────────────────────── -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Finalizar Pedido</h2>
+                <button class="modal-close" id="modalCloseBtn" aria-label="Fechar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-section">
+                    <h3><i class="fas fa-list"></i> Resumo do Pedido</h3>
+                    <div class="checkout-items" id="checkoutItems"></div>
+                    <div class="checkout-total">
+                        <span>Total a pagar:</span>
+                        <strong id="checkoutTotal">R$ 0,00</strong>
+                    </div>
+                </div>
+                <div class="checkout-section" id="paymentOptionsSection">
+                    <h3><i class="fas fa-wallet"></i> Forma de Pagamento</h3>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <button class="payment-btn" data-method="pix">
+                                <div class="payment-icon"><i class="fab fa-pix"></i></div>
+                                <div class="payment-info"><strong>PIX</strong><span>Pagamento instantâneo</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" data-method="mercadopago" style="border-color: rgba(0,158,227,0.35);">
+                                <div class="payment-icon" style="background: rgba(0,158,227,0.12); color:#009ee3;"><i class="fas fa-credit-card"></i></div>
+                                <div class="payment-info"><strong>Cartão / PIX / Boleto</strong><span>Via Mercado Pago — parcelamento disponível</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" data-method="whatsapp">
+                                <div class="payment-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="payment-info"><strong>WhatsApp</strong><span>Pedir com todas as informações</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" data-method="pickup">
+                                <div class="payment-icon pickup-icon"><i class="fas fa-store"></i></div>
+                                <div class="payment-info"><strong>Retirar no Local</strong><span>Pagar na retirada</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-section pix-section" id="pixSection" style="display: none;">
+                    <div class="pix-header">
+                        <button class="back-btn" id="backToPaymentBtn"><i class="fas fa-arrow-left"></i> Voltar</button>
+                        <h3><i class="fab fa-pix"></i> Pagamento PIX</h3>
+                    </div>
+                    <div class="pix-instructions"><p>Escaneie o QR Code ou copie o código PIX para realizar o pagamento</p></div>
+                    <div class="pix-qrcode"><div id="qrcodeContainer"></div></div>
+                    <div class="pix-code">
+                        <label>Código PIX (Copia e Cola)</label>
+                        <div class="pix-code-input">
+                            <input type="text" id="pixCode" readonly>
+                            <button class="btn-copy" id="copyPixBtn"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <div class="copy-feedback" id="copyFeedback"><i class="fas fa-check"></i> Código copiado!</div>
+                    </div>
+                    <div class="pix-value">
+                        <span>Valor a pagar:</span>
+                        <strong id="pixValue">R$ 0,00</strong>
+                    </div>
+                    <div class="pix-form" id="pixForm">
+                        <h4><i class="fas fa-user"></i> Dados para Entrega</h4>
+                        <div class="form-group">
+                            <label for="pixClientName">Nome Completo *</label>
+                            <input type="text" id="pixClientName" required placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="pixClientPhone">Telefone *</label>
+                            <input type="tel" id="pixClientPhone" required placeholder="(88) 99999-9999">
+                        </div>
+                        <div class="form-group">
+                            <label for="pixDeliveryAddress">Endereço de Entrega *</label>
+                            <textarea id="pixDeliveryAddress" rows="3" required placeholder="Rua, número, bairro, complemento..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pixObservations">Observações</label>
+                            <textarea id="pixObservations" rows="2" placeholder="Alguma observação sobre o pedido?"></textarea>
+                        </div>
+                    </div>
+                    <div class="pix-footer">
+                        <p class="pix-note"><i class="fas fa-info-circle"></i> Após o pagamento, preencha os dados acima e clique em "Confirmar Pedido"</p>
+                        <button class="btn btn-success" id="confirmPixBtn"><i class="fas fa-check-circle"></i> Confirmar Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CRO Popup ─────────────────────────── -->
+    <div id="croPopup" class="popup-left">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Fechar popup">&times;</button>
+            <div class="popup-body"></div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script>
+        // ========================================
+        // HOMEPAGE: EXIBIR APENAS 4 PRATOS DE CADA CATEGORIA (ENTRADAS, PRINCIPAIS, SOBREMESAS)
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof renderProducts === 'function') {
+                // IDs dos produtos a serem exibidos na home (4 por categoria)
+                // Escolhemos os primeiros 4 de cada categoria (ordem do array)
+                const destaquesIds = [
+                    // Entradas (ids 1,2,10,11)
+                    1, 2, 10, 11,
+                    // Principais (ids 3,4,5,6)
+                    3, 4, 5

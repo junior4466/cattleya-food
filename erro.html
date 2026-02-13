@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento não concluído - Cattleya Food</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .status-page { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem; background-color:var(--black-deep); }
+        .status-card { background:var(--black-card); border:1px solid var(--black-border); border-radius:16px; padding:3rem 2.5rem; text-align:center; max-width:480px; width:100%; box-shadow:var(--shadow-xl); }
+        .status-icon { font-size:4rem; margin-bottom:1.5rem; color:#ef4444; }
+        .status-card h1 { font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8rem; margin-bottom:1rem; }
+        .status-card p { color:var(--champagne); opacity:.85; margin-bottom:.75rem; line-height:1.6; }
+        .btn-link { display:inline-block; margin-top:1rem; padding:.85rem 2rem; background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:#0a0a0a; font-weight:700; border-radius:8px; text-decoration:none; font-size:1rem; transition:opacity .2s; }
+        .btn-link:hover { opacity:.85; }
+        .btn-link.whatsapp { background:linear-gradient(135deg,#25d366,#128c7e); color:#fff; margin-left:.5rem; }
+        .info-box { background:rgba(239,68,68,.08); border:1px solid rgba(239,68,68,.25); border-radius:8px; padding:1rem; margin:1.5rem 0; }
+        .info-box p { margin:.25rem 0; font-size:.9rem; color:#ef4444; opacity:1; }
+    </style>
+</head>
+<body>
+    <div class="status-page">
+        <div class="status-card">
+            <div class="status-icon"><i class="fas fa-times-circle"></i></div>
+            <h1>Pagamento não concluído</h1>
+            <p>Infelizmente seu pagamento não foi aprovado.</p>
+            <p>Você pode tentar novamente ou escolher outra forma de pagamento.</p>
+            <div class="info-box">
+                <p><i class="fas fa-info-circle"></i> &nbsp;Verifique os dados do cartão e tente novamente, ou entre em contato conosco.</p>
+            </div>
+            <a href="cardapio.html" class="btn-link"><i class="fas fa-redo"></i> Tentar novamente</a>
+            <a href="https://api.whatsapp.com/send/?phone=5588981195074&text=Olá!%20Tive%20problema%20no%20pagamento.%20Pode%20me%20ajudar%3F&type=phone_number&app_absent=0"
+               target="_blank" rel="noopener noreferrer" class="btn-link whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+</body>
+</html>

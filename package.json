@@ -1,0 +1,21 @@
+{
+  "name": "cattleya-food-main",
+  "version": "1.0.0",
+  "description": "Cattleya Food - Site e funções serverless (Netlify Functions + Mercado Pago)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Site estático - sem build necessário'",
+    "test": "echo 'Nenhum teste configurado' && exit 0"
+  },
+  "keywords": ["restaurante", "cattleya", "food", "netlify", "mercadopago"],
+  "author": "Jr. Abrantes",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mercadopago": "^2.12.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

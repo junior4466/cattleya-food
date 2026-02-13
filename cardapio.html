@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cardápio completo do Cattleya Food - Restaurante premium em Aquiraz-CE. Entradas, pratos principais, sobremesas e bebidas.">
+    <meta name="keywords" content="cardápio, restaurante, gourmet, Aquiraz, CE, gastronomia">
+    <meta name="author" content="Jr. Abrantes">
+    <meta property="og:title" content="Cardápio - Cattleya Food">
+    <meta property="og:description" content="Conheça nosso cardápio completo com opções para todos os gostos.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200">
+    <title>Cardápio - Cattleya Food</title>
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <a href="https://api.whatsapp.com/send/?phone=5588981195074&text&type=phone_number&app_absent=0"
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="Cattleya Food Home">
+                    <span class="logo-text">Cattleya Food</span>
+                </a>
+                <button class="cart-icon" id="cartIcon" aria-label="Abrir carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html#home" class="nav-link">Início</a></li>
+                        <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+                        <li><a href="index.html#menu" class="nav-link">Destaques</a></li>
+                        <li><a href="cardapio.html" class="nav-link active">Cardápio</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80')">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Cardápio</h1>
+                <p class="hero-subtitle">Explore todas as nossas opções</p>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Nosso Cardápio</h2>
+            <p class="section-subtitle">Escolha entre entradas, pratos principais, sobremesas e bebidas</p>
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="entradas">Entradas</button>
+                <button class="filter-btn" data-filter="principais">Principais</button>
+                <button class="filter-btn" data-filter="sobremesas">Sobremesas</button>
+                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">Cattleya Food</span>
+                    </div>
+                    <p class="footer-description">
+                        Excelência gastronômica em cada experiência.
+                        Sabores autênticos e serviço premium.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Início</a></li>
+                        <li><a href="index.html#about">Sobre</a></li>
+                        <li><a href="index.html#menu">Destaques</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Informações</h3>
+                    <ul class="footer-links">
+                        <li><a href="politicas.html#privacidade">Política de Privacidade</a></li>
+                        <li><a href="politicas.html#cookies">Política de Cookies</a></li>
+                        <li><a href="politicas.html#termos">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Formas de Pagamento</h3>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-pix"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cattleya Food. Todos os direitos reservados.</p>
+                <p class="developer-credit">Desenvolvido por <strong>Jr. Abrantes</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
+            <button class="cart-close" id="cartClose" aria-label="Fechar carrinho"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Seu carrinho está vazio</p>
+                <button class="btn btn-primary" onclick="closeCart()">Ver Cardápio</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-summary">
+                <div class="summary-row"><span>Subtotal:</span><span id="cartSubtotal">R$ 0,00</span></div>
+                <div class="summary-row"><span>Taxa de entrega:</span><span id="cartDeliveryFee">R$ 8,00</span></div>
+                <div class="summary-row total"><span>Total:</span><span id="cartTotal">R$ 0,00</span></div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" onclick="clearCart()"><i class="fas fa-trash"></i> Limpar</button>
+                <button class="btn btn-primary" onclick="openCheckout()"><i class="fas fa-check"></i> Finalizar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Finalizar Pedido</h2>
+                <button class="modal-close" onclick="closeCheckout()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-section">
+                    <h3><i class="fas fa-list"></i> Resumo do Pedido</h3>
+                    <div class="checkout-items" id="checkoutItems"></div>
+                    <div class="checkout-total">
+                        <span>Total a pagar:</span>
+                        <strong id="checkoutTotal">R$ 0,00</strong>
+                    </div>
+                </div>
+                <div class="checkout-section" id="paymentOptionsSection">
+                    <h3><i class="fas fa-wallet"></i> Forma de Pagamento</h3>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <button class="payment-btn" onclick="selectPayment('pix')">
+                                <div class="payment-icon"><i class="fab fa-pix"></i></div>
+                                <div class="payment-info"><strong>PIX</strong><span>Pagamento instantâneo</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" onclick="selectPayment('mercadopago')" style="border-color: rgba(0,158,227,0.35);">
+                                <div class="payment-icon" style="background: rgba(0,158,227,0.12); color:#009ee3;"><i class="fas fa-credit-card"></i></div>
+                                <div class="payment-info"><strong>Cartão / PIX / Boleto</strong><span>Via Mercado Pago — parcelamento disponível</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" onclick="selectPayment('whatsapp')">
+                                <div class="payment-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="payment-info"><strong>WhatsApp</strong><span>Pedir com todas as informações</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="payment-option">
+                            <button class="payment-btn" onclick="selectPayment('pickup')">
+                                <div class="payment-icon pickup-icon"><i class="fas fa-store"></i></div>
+                                <div class="payment-info"><strong>Retirar no Local</strong><span>Pagar na retirada</span></div>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-section pix-section" id="pixSection" style="display: none;">
+                    <div class="pix-header">
+                        <button class="back-btn" onclick="backToPaymentOptions()"><i class="fas fa-arrow-left"></i> Voltar</button>
+                        <h3><i class="fab fa-pix"></i> Pagamento PIX</h3>
+                    </div>
+                    <div class="pix-instructions"><p>Escaneie o QR Code ou copie o código PIX para realizar o pagamento</p></div>
+                    <div class="pix-qrcode"><div id="qrcodeContainer"></div></div>
+                    <div class="pix-code">
+                        <label>Código PIX (Copia e Cola)</label>
+                        <div class="pix-code-input">
+                            <input type="text" id="pixCode" readonly>
+                            <button class="btn-copy" onclick="copyPixCode()"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <div class="copy-feedback" id="copyFeedback"><i class="fas fa-check"></i> Código copiado!</div>
+                    </div>
+                    <div class="pix-value">
+                        <span>Valor a pagar:</span>
+                        <strong id="pixValue">R$ 0,00</strong>
+                    </div>
+                    <div class="pix-form" id="pixForm">
+                        <h4><i class="fas fa-user"></i> Dados para Entrega</h4>
+                        <div class="form-group">
+                            <label for="pixClientName">Nome Completo *</label>
+                            <input type="text" id="pixClientName" required placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="pixClientPhone">Telefone *</label>
+                            <input type="tel" id="pixClientPhone" required placeholder="(88) 99999-9999">
+                        </div>
+                        <div class="form-group">
+                            <label for="pixDeliveryAddress">Endereço de Entrega *</label>
+                            <textarea id="pixDeliveryAddress" rows="3" required placeholder="Rua, número, bairro, complemento..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pixObservations">Observações</label>
+                            <textarea id="pixObservations" rows="2" placeholder="Alguma observação sobre o pedido?"></textarea>
+                        </div>
+                    </div>
+                    <div class="pix-footer">
+                        <p class="pix-note"><i class="fas fa-info-circle"></i> Após o pagamento, preencha os dados acima e clique em "Confirmar Pedido"</p>
+                        <button class="btn btn-success" onclick="confirmPixPayment()"><i class="fas fa-check-circle"></i> Confirmar Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CRO Popup Lateral -->
+    <div id="croPopup" class="popup-left">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Fechar popup">&times;</button>
+            <div class="popup-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Exibe todos os produtos na página de cardápio
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                renderProducts(); // sem filtro = todos os produtos
+            }, 50);
+        });
+    </script>
+</body>
+
+</html>

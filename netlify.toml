@@ -1,0 +1,46 @@
+# ================================================
+# netlify.toml — Configuração Cattleya Food
+# ================================================
+
+[build]
+  # Pasta pública (todos os arquivos HTML/CSS/JS)
+  publish = "."
+  # Instala as dependências para as funções serverless
+  command = "npm install"
+
+[functions]
+  # Pasta onde ficam as funções Netlify (Mercado Pago etc.)
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# ------------------------------------------------
+# Cabeçalhos de segurança e performance
+# ------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
+
+# Cache longo para assets estáticos
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# ------------------------------------------------
+# Redirecionamento de SPA (404 → index)
+# ------------------------------------------------
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"]}
+  force  = false

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Políticas de Privacidade, Cookies e Termos de Uso - Cattleya Food">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Políticas e Termos - Cattleya Food</title>
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --black-deep:    #060607;
+            --black-card:    #111113;
+            --black-surface: #1a1a1e;
+            --black-border:  #282830;
+            --gold:          #c9a84c;
+            --gold-light:    #e2c97e;
+            --gold-muted:    rgba(201, 168, 76, 0.18);
+            --champagne:     #f0e0c2;
+            --white:         #ffffff;
+
+            --font-display: 'Playfair Display', serif;
+            --font-body:    'Cormorant Garamond', serif;
+
+            --ease-luxury: cubic-bezier(0.76, 0, 0.24, 1);
+            --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+
+            --header-h: 72px;
+            --nav-h:    56px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black-deep);
+            color: var(--champagne);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ═══════════════════════════════════════════
+           HEADER
+        ═══════════════════════════════════════════ */
+        .header {
+            height: var(--header-h);
+            background: var(--black-card);
+            border-bottom: 1px solid var(--black-border);
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Thin gold line at very bottom of header */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: opacity 0.25s ease;
+        }
+        .logo:hover { opacity: 0.8; }
+        .logo-icon { font-size: 2rem; line-height: 1; }
+
+        /* ═══════════════════════════════════════════
+           HAMBURGER BUTTON
+        ═══════════════════════════════════════════ */
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, 0.30);
+            border-radius: 50%;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0;
+            z-index: 1200;
+            transition:
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+        .menu-toggle:hover {
+            border-color: var(--gold);
+            background: var(--gold-muted);
+            box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+        }
+
+        /* The three bars */
+        .bar {
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: var(--gold);
+            border-radius: 2px;
+            transform-origin: center;
+            transition:
+                transform 0.45s var(--ease-luxury),
+                opacity   0.3s  ease,
+                width     0.35s var(--ease-luxury);
+        }
+        .bar:nth-child(1) { width: 18px; }
+        .bar:nth-child(2) { width: 13px; }   /* slightly shorter for personality */
+        .bar:nth-child(3) { width: 18px; }
+
+        /* Open state — morph into × */
+        .menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+            width: 18px;
+        }
+        .menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0.4);
+        }
+        .menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+            width: 18px;
+        }
+
+        /* ═══════════════════════════════════════════
+           DESKTOP NAV BAR
+        ═══════════════════════════════════════════ */
+        .nav-policies {
+            height: var(--nav-h);
+            background: var(--black-card);
+            border-bottom: 1px solid var(--black-border);
+            position: sticky;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-policies .container { display: flex; justify-content: center; }
+
+        .nav-policies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-link {
+            position: relative;
+            color: var(--champagne);
+            text-decoration: none;
+            padding: 0.45rem 0.9rem;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: color 0.25s ease;
+            overflow: hidden;
+        }
+
+        /* Animated underline on desktop */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0.9rem;
+            right: 0.9rem;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s var(--ease-out);
+        }
+        .nav-link:hover { color: var(--gold-light); }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        /* Social icon links on desktop */
+        .social-link {
+            font-size: 1rem;
+            opacity: 0.75;
+            transition: opacity 0.25s ease, color 0.25s ease;
+        }
+        .social-link:hover { opacity: 1; }
+        .social-link::after { display: none; }  /* no underline on social icons */
+        .social-text { display: none; }          /* icon-only on desktop */
+
+        /* Vertical divider between social icons and policy links */
+        .nav-divider {
+            display: inline-block;
+            width: 1px;
+            height: 18px;
+            background: var(--black-border);
+            margin: 0 0.5rem;
+            vertical-align: middle;
+        }
+
+
+        /* ═══════════════════════════════════════════
+           OVERLAY
+        ═══════════════════════════════════════════ */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 6, 7, 0.82);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .drawer-overlay.visible {
+            display: block;
+        }
+        .drawer-overlay.active {
+            opacity: 1;
+        }
+
+
+        /* ═══════════════════════════════════════════
+           DRAWER (MOBILE)
+        ═══════════════════════════════════════════ */
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(300px, 82vw);
+            height: 100dvh;
+            background: linear-gradient(160deg, #16161a 0%, #0e0e11 60%, #090909 100%);
+            border-left: 1px solid rgba(201, 168, 76, 0.12);
+            box-shadow: -24px 0 64px rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            transform: translateX(100%);
+            transition: transform 0.55s var(--ease-luxury);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        .drawer.active { transform: translateX(0); }
+
+        /* Top gold bar accent */
+        .drawer::before {
+            content: '';
+            display: block;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-light) 60%, transparent 100%);
+            flex-shrink: 0;
+        }
+
+        /* Drawer brand area */
+        .drawer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 1.75rem 1.25rem;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+        }
+        .drawer-brand-logo {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        /* Close button inside drawer */
+        .drawer-close {
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: 1px solid rgba(201, 168, 76, 0.20);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.75rem;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+        .drawer-close:hover {
+            background: var(--gold-muted);
+            border-color: var(--gold);
+        }
+
+        /* Social icons row */
+        .drawer-socials {
+            display: flex;
+            gap: 0.65rem;
+            padding: 1.25rem 1.75rem;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+        }
+        .drawer-social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            color: var(--champagne);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.2s ease;
+        }
+        .drawer-social-btn:hover {
+            background: var(--gold-muted);
+            border-color: rgba(201, 168, 76, 0.5);
+            color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Policy nav links inside drawer */
+        .drawer-nav {
+            flex: 1;
+            padding: 1rem 0;
+        }
+
+        .drawer-section-label {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(201, 168, 76, 0.5);
+            padding: 0.75rem 1.75rem 0.5rem;
+        }
+
+        .drawer-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.85rem 1.75rem;
+            color: var(--champagne);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            border-left: 2px solid transparent;
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                padding-left 0.25s ease;
+
+            /* Stagger in animation */
+            opacity: 0;
+            transform: translateX(14px);
+        }
+
+        .drawer-nav-item i {
+            font-size: 0.8rem;
+            color: var(--gold);
+            opacity: 0.6;
+            transition: opacity 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .drawer-nav-item:hover {
+            color: var(--gold-light);
+            border-left-color: var(--gold);
+            background: rgba(201, 168, 76, 0.04);
+            padding-left: 2rem;
+        }
+        .drawer-nav-item:hover i { opacity: 1; }
+
+        /* Animate items in when drawer opens */
+        .drawer.active .drawer-nav-item {
+            animation: slideInItem 0.45s var(--ease-out) forwards;
+        }
+        .drawer.active .drawer-nav-item:nth-child(1) { animation-delay: 0.15s; }
+        .drawer.active .drawer-nav-item:nth-child(2) { animation-delay: 0.22s; }
+        .drawer.active .drawer-nav-item:nth-child(3) { animation-delay: 0.29s; }
+        .drawer.active .drawer-nav-item:nth-child(4) { animation-delay: 0.36s; }
+
+        @keyframes slideInItem {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Footer inside drawer */
+        .drawer-footer {
+            padding: 1.25rem 1.75rem;
+            border-top: 1px solid rgba(201, 168, 76, 0.06);
+            font-size: 0.75rem;
+            color: rgba(240, 224, 194, 0.3);
+            letter-spacing: 0.04em;
+        }
+
+
+        /* ═══════════════════════════════════════════
+           MOBILE RULES
+        ═══════════════════════════════════════════ */
+        @media (max-width: 767px) {
+            :root { --header-h: 60px; }
+
+            .logo { font-size: 1.4rem; }
+            .logo-icon { font-size: 1.75rem; }
+
+            .menu-toggle { display: flex; }
+
+            /* Nav bar collapses completely on mobile */
+            .nav-policies {
+                height: 0;
+                overflow: hidden;
+                border-bottom: none;
+                pointer-events: none;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle  { display: none !important; }
+            .drawer       { display: none !important; }
+            .drawer-overlay { display: none !important; }
+        }
+
+
+        /* ═══════════════════════════════════════════
+           MAIN / CONTENT
+        ═══════════════════════════════════════════ */
+        .main { padding-bottom: 4rem; }
+
+        .section {
+            background: var(--black-card);
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--gold);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            color: var(--gold-light);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .section h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--champagne);
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .section p { color: var(--champagne); margin-bottom: 1rem; font-size: 1.05rem; }
+        .section ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .section li { color: var(--champagne); margin-bottom: 0.75rem; }
+
+        .highlight {
+            background: var(--black-surface);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 2px solid var(--gold);
+        }
+        .highlight a { color: var(--gold-light); }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════ */
+        .footer {
+            background: var(--black-card);
+            padding: 2rem 0;
+            border-top: 1px solid var(--black-border);
+            text-align: center;
+        }
+        .footer p { color: var(--champagne); margin-bottom: 0.75rem; }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--black-deep);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .back-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(201, 168, 76, 0.30);
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 1.5rem; }
+            .section-title { font-size: 1.9rem; }
+            .section h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── OVERLAY ──────────────────────────────── -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+    <!-- ── DRAWER ───────────────────────────────── -->
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+
+        <div class="drawer-brand">
+            <span class="drawer-brand-logo">Cattleya Food</span>
+            <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="drawer-socials">
+            <a href="https://instagram.com/cattleya.cro" target="_blank" rel="noopener"
+               class="drawer-social-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5588981195074" target="_blank" rel="noopener"
+               class="drawer-social-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#82e1edecf6e3f6ede1e3f6f6eee7fbe3ace1f0edc2e5efe3ebeeace1edef" class="drawer-social-btn" aria-label="E-mail">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+
+        <nav class="drawer-nav">
+            <p class="drawer-section-label">Documentos</p>
+            <a href="#privacidade" class="drawer-nav-item">
+                <i class="fas fa-shield-alt"></i>
+                Política de Privacidade
+            </a>
+            <a href="#cookies" class="drawer-nav-item">
+                <i class="fas fa-cookie-bite"></i>
+                Política de Cookies
+            </a>
+            <a href="#termos" class="drawer-nav-item">
+                <i class="fas fa-file-contract"></i>
+                Termos de Uso
+            </a>
+            <a href="index.html" class="drawer-nav-item">
+                <i class="fas fa-arrow-left"></i>
+                Voltar ao Site
+            </a>
+        </nav>
+
+        <div class="drawer-footer">© 2025 Cattleya Food</div>
+    </aside>
+
+
+    <!-- ── HEADER ───────────────────────────────── -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Cattleya Food</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="drawer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ── NAV BAR (desktop) ────────────────────── -->
+    <nav class="nav-policies" id="navPolicies" aria-label="Navegação de políticas">
+        <div class="container">
+            <ul class="nav-policies-list">
+                <li>
+                    <a href="https://instagram.com/cattleya.cro" target="_blank" rel="noopener"
+                       class="nav-link social-link" aria-label="Instagram @cattleya.cro">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-text">@cattleya.cro</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/5588981195074" target="_blank" rel="noopener"
+                       class="nav-link social-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="social-text">(88) 98119-5074</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cdn-cgi/l/email-protection#690a06071d081d060a081d1d050c1008470a1b06290e04080005470a0604" class="nav-link social-link" aria-label="E-mail">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                </li>
+                <li><span class="nav-divider" aria-hidden="true"></span></li>
+                <li><a href="#privacidade" class="nav-link">Política de Privacidade</a></li>
+                <li><a href="#cookies"     class="nav-link">Política de Cookies</a></li>
+                <li><a href="#termos"      class="nav-link">Termos de Uso</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- ── CONTEÚDO PRINCIPAL ───────────────────── -->
+    <main class="main" id="main">
+        <div class="container">
+
+            <!-- Política de Privacidade -->
+            <section id="privacidade" class="section">
+                <h1 class="section-title">Política de Privacidade</h1>
+                <div class="highlight">
+                    <p><strong>Última atualização:</strong> Fevereiro de 2025</p>
+                    <p>A Cattleya Food está comprometida em proteger a privacidade dos seus clientes e visitantes do site.</p>
+                </div>
+                <h2>1. Informações que Coletamos</h2>
+                <p>Coletamos diferentes tipos de informações para fornecer e melhorar nossos serviços:</p>
+                <h3>1.1. Informações Fornecidas por Você</h3>
+                <ul>
+                    <li>Nome completo</li>
+                    <li>Endereço de e-mail</li>
+                    <li>Número de telefone</li>
+                    <li>Endereço de entrega</li>
+                    <li>Informações de pagamento (processadas por terceiros seguros)</li>
+                </ul>
+                <h3>1.2. Informações Coletadas Automaticamente</h3>
+                <ul>
+                    <li>Endereço IP</li>
+                    <li>Tipo de navegador e dispositivo</li>
+                    <li>Páginas visitadas e tempo de navegação</li>
+                    <li>Cookies e tecnologias similares</li>
+                </ul>
+                <h2>2. Como Utilizamos Suas Informações</h2>
+                <p>Utilizamos as informações coletadas para:</p>
+                <ul>
+                    <li>Processar e entregar seus pedidos</li>
+                    <li>Comunicar sobre o status do pedido</li>
+                    <li>Melhorar nossos produtos e serviços</li>
+                    <li>Enviar ofertas e promoções (com seu consentimento)</li>
+                    <li>Responder às suas dúvidas e solicitações</li>
+                    <li>Cumprir obrigações legais</li>
+                </ul>
+                <h2>3. Compartilhamento de Informações</h2>
+                <p>Não vendemos suas informações pessoais. Podemos compartilhar seus dados apenas com:</p>
+                <ul>
+                    <li><strong>Prestadores de Serviços:</strong> Empresas que auxiliam na entrega, pagamento e operação do site</li>
+                    <li><strong>Autoridades Legais:</strong> Quando exigido por lei ou para proteger nossos direitos</li>
+                    <li><strong>Parceiros de Negócios:</strong> Com seu consentimento explícito</li>
+                </ul>
+                <h2>4. Segurança dos Dados</h2>
+                <p>Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações:</p>
+                <ul>
+                    <li>Criptografia SSL/TLS para transmissão de dados</li>
+                    <li>Servidores seguros e protegidos</li>
+                    <li>Acesso restrito às informações pessoais</li>
+                    <li>Monitoramento regular de segurança</li>
+                </ul>
+                <h2>5. Seus Direitos (LGPD)</h2>
+                <p>Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a:</p>
+                <ul>
+                    <li>Confirmar a existência de tratamento dos seus dados</li>
+                    <li>Acessar seus dados pessoais</li>
+                    <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+                    <li>Solicitar a exclusão dos seus dados</li>
+                    <li>Revogar o consentimento a qualquer momento</li>
+                </ul>
+                <h2>6. Contato para Privacidade</h2>
+                <div class="highlight">
+                    <p><strong>E-mail:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e98a86879d889d868a889d9d858c9088c78a9b86a98e84888085c78a8684">[email&#160;protected]</a></p>
+                    <p><strong>WhatsApp:</strong> (88) 98119-5074</p>
+                </div>
+            </section>
+
+            <!-- Política de Cookies -->
+            <section id="cookies" class="section">
+                <h1 class="section-title">Política de Cookies</h1>
+                <div class="highlight">
+                    <p><strong>Última atualização:</strong> Fevereiro de 2025</p>
+                </div>
+                <h2>1. O que são Cookies</h2>
+                <p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita nosso site.</p>
+                <h2>2. Tipos de Cookies que Utilizamos</h2>
+                <ul>
+                    <li><strong>Cookies Essenciais:</strong> Necessários para o funcionamento básico do site</li>
+                    <li><strong>Cookies de Desempenho:</strong> Analisam como você usa o site</li>
+                    <li><strong>Cookies de Funcionalidade:</strong> Lembram suas preferências</li>
+                    <li><strong>Cookies de Marketing:</strong> Personalizam anúncios (com consentimento)</li>
+                </ul>
+                <h2>3. Como Utilizamos os Cookies</h2>
+                <ul>
+                    <li>Manter sua sessão ativa durante a navegação</li>
+                    <li>Analisar o tráfego e comportamento no site</li>
+                    <li>Melhorar a experiência do usuário</li>
+                    <li>Personalizar conteúdo e ofertas</li>
+                </ul>
+                <h2>4. Gerenciamento de Cookies</h2>
+                <p>Você pode controlar e gerenciar cookies através das configurações do seu navegador:</p>
+                <ul>
+                    <li>Bloquear todos os cookies</li>
+                    <li>Aceitar apenas cookies essenciais</li>
+                    <li>Excluir cookies existentes</li>
+                    <li>Receber notificações antes de aceitar cookies</li>
+                </ul>
+                <div class="highlight">
+                    <p><strong>Importante:</strong> Bloquear cookies pode afetar a funcionalidade do site e sua experiência de navegação.</p>
+                </div>
+                <h2>5. Duração dos Cookies</h2>
+                <ul>
+                    <li><strong>Cookies de Sessão:</strong> Expiram quando você fecha o navegador</li>
+                    <li><strong>Cookies Persistentes:</strong> Permanecem por um período específico (geralmente até 2 anos)</li>
+                </ul>
+            </section>
+
+            <!-- Termos de Uso -->
+            <section id="termos" class="section">
+                <h1 class="section-title">Termos de Uso</h1>
+                <div class="highlight">
+                    <p><strong>Última atualização:</strong> Fevereiro de 2025</p>
+                    <p>Ao acessar e usar o site da Cattleya Food, você concorda com estes Termos de Uso.</p>
+                </div>
+                <h2>1. Aceitação dos Termos</h2>
+                <p>Ao utilizar nossos serviços, você declara que leu, compreendeu e concordou com todos os termos e condições descritos neste documento.</p>
+                <h2>2. Serviços Oferecidos</h2>
+                <p>A Cattleya Food oferece:</p>
+                <ul>
+                    <li>Venda de produtos gastronômicos premium</li>
+                    <li>Serviço de entrega em domicílio</li>
+                    <li>Reservas e informações sobre nossos serviços</li>
+                    <li>Conteúdo informativo sobre gastronomia</li>
+                </ul>
+                <h2>3. Cadastro e Conta de Usuário</h2>
+                <h3>3.1. Responsabilidade do Usuário</h3>
+                <ul>
+                    <li>Fornecer informações verdadeiras e atualizadas</li>
+                    <li>Manter a confidencialidade de suas credenciais</li>
+                    <li>Notificar imediatamente sobre uso não autorizado</li>
+                    <li>Ser responsável por todas as atividades em sua conta</li>
+                </ul>
+                <h2>4. Pedidos e Pagamentos</h2>
+                <h3>4.1. Realização de Pedidos</h3>
+                <ul>
+                    <li>Pedidos estão sujeitos à disponibilidade de produtos</li>
+                    <li>Reservamo-nos o direito de recusar pedidos</li>
+                    <li>Confirmação do pedido será enviada por e-mail/WhatsApp</li>
+                </ul>
+                <h3>4.2. Preços e Formas de Pagamento</h3>
+                <ul>
+                    <li>Preços sujeitos a alteração sem aviso prévio</li>
+                    <li>Aceitamos cartões de crédito, débito e PIX</li>
+                    <li>Pagamentos processados por plataformas seguras</li>
+                    <li>Comprovação de pagamento pode ser solicitada</li>
+                </ul>
+                <h3>4.3. Cancelamento de Pedidos</h3>
+                <p>Pedidos podem ser cancelados até 30 minutos após a confirmação. Após esse período, estará sujeito à nossa política de cancelamento.</p>
+                <h2>5. Entrega</h2>
+                <h3>5.1. Área de Cobertura</h3>
+                <p>Realizamos entregas em Aquiraz-CE e região. Consulte disponibilidade para seu endereço.</p>
+                <h3>5.2. Prazo de Entrega</h3>
+                <ul>
+                    <li>Tempo estimado: 30-45 minutos</li>
+                    <li>Pode variar conforme demanda e condições climáticas</li>
+                    <li>Atrasos serão comunicados imediatamente</li>
+                </ul>
+                <h3>5.3. Recebimento</h3>
+                <ul>
+                    <li>Pessoa autorizada deve receber o pedido</li>
+                    <li>Verificar integridade dos produtos na entrega</li>
+                    <li>Reportar problemas imediatamente</li>
+                </ul>
+                <h2>6. Política de Troca e Devolução</h2>
+                <p>Devido à natureza perecível dos alimentos:</p>
+                <ul>
+                    <li>Não aceitamos devoluções de produtos consumidos</li>
+                    <li>Produtos com defeito serão substituídos ou reembolsados</li>
+                    <li>Reclamações devem ser feitas em até 2 horas após entrega</li>
+                    <li>Fotos podem ser solicitadas para comprovação</li>
+                </ul>
+                <h2>7. Propriedade Intelectual</h2>
+                <p>Todo o conteúdo do site é protegido por direitos autorais. É proibida a reprodução sem autorização expressa.</p>
+                <h2>8. Limitação de Responsabilidade</h2>
+                <p>A Cattleya Food não se responsabiliza por:</p>
+                <ul>
+                    <li>Informações incorretas fornecidas pelo cliente</li>
+                    <li>Problemas causados por falhas de terceiros (internet, energia)</li>
+                    <li>Impossibilidade de entrega por caso fortuito ou força maior</li>
+                    <li>Reações alérgicas (lista de ingredientes disponível)</li>
+                </ul>
+                <h2>9. Modificações dos Termos</h2>
+                <p>Reservamo-nos o direito de modificar estes termos a qualquer momento.</p>
+                <h2>10. Contato</h2>
+                <div class="highlight">
+                    <p><strong>E-mail:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94f7fbfae0f5e0fbf7f5e0e0f8f1edf5baf7e6fbd4f3f9f5fdf8baf7fbf9">[email&#160;protected]</a></p>
+                    <p><strong>WhatsApp:</strong> (88) 98119-5074</p>
+                    <p><strong>Instagram:</strong> @cattleya.cro</p>
+                    <p><strong>Endereço:</strong> Aquiraz-CE</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ── FOOTER ────────────────────────────────── -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Cattleya Food. Todos os direitos reservados.</p>
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i>
+                Voltar ao Site
+            </a>
+            <p style="margin-top:1.5rem;">Desenvolvido por <strong>Jr. Abrantes</strong></p>
+        </div>
+    </footer>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    (function () {
+        'use strict';
+
+        const toggle  = document.getElementById('menuToggle');
+        const drawer  = document.getElementById('drawer');
+        const overlay = document.getElementById('drawerOverlay');
+        const closeBtn= document.getElementById('drawerClose');
+        const main    = document.getElementById('main');
+        const header  = document.querySelector('.header');
+        const nav     = document.querySelector('.nav-policies');
+
+        /* ── Dynamic top padding so sticky elements don't overlap content ── */
+        function adjustPadding() {
+            if (!header || !main) return;
+            const hh = header.offsetHeight;
+            const nh = nav ? nav.offsetHeight : 0;
+            nav && (nav.style.top = hh + 'px');
+            main.style.paddingTop = (hh + nh) + 'px';
+        }
+        window.addEventListener('load', adjustPadding);
+        window.addEventListener('resize', adjustPadding);
+
+        /* ── Drawer open / close ── */
+        function openDrawer() {
+            overlay.classList.add('visible');
+            requestAnimationFrame(() => overlay.classList.add('active'));
+            drawer.classList.add('active');
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.setAttribute('aria-label', 'Fechar menu');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            overlay.classList.remove('active');
+            drawer.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Abrir menu');
+            document.body.style.overflow = '';
+            setTimeout(() => overlay.classList.remove('visible'), 400);
+        }
+
+        toggle  && toggle.addEventListener('click',   openDrawer);
+        closeBtn && closeBtn.addEventListener('click', closeDrawer);
+        overlay  && overlay.addEventListener('click',  closeDrawer);
+
+        /* Close on nav-item click (smooth scroll handled below) */
+        drawer && drawer.querySelectorAll('.drawer-nav-item').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        /* Keyboard: close on Escape */
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && drawer.classList.contains('active')) closeDrawer();
+        });
+
+        /* ── Smooth scroll for anchor links ── */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                co
